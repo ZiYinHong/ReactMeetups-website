@@ -36,7 +36,7 @@ export async function getStaticPaths() {
   client.close();
 
   return {
-    fallback: false, //tell nextJS whether your paths array contain all support params valus(false) or some of them(true) //ex; m3 --> 404
+    fallback: 'blocking', //tell nextJS whether your paths array contain all support params valus(false) or some of them(true) //ex; m3 --> 404
     paths: meetups.map((meetup) => ({
       params: { meetupId: meetup._id.toString() },
     })),
